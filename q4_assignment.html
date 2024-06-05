@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            color: red;
+        }
+        ul li{
+            list-style-type: none;
+        }
+        div{
+            height: auto;
+            width: 70%;
+            margin: 10px;
+        }
+        ul{
+            height: auto;
+            width: 50%;
+            margin: 10px; 
+        }
+        ul li{
+            height: 50px;
+            width: 40%; 
+            margin: 10px;
+        }
+        span{
+            margin: 10px;
+          
+        }
+    </style>
+</head>
+<body>
+    body(great-great-grand)
+
+    <div>
+        div(great-grandparent)
+        <ul>
+            ul(grandparent)
+            <li>li(direct-parent)
+                <br>
+                <span>span</span>
+            </li>
+               
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+    <script>
+      
+        $('span').parents().css({border:"2px solid red"})
+        $('span').css({border:"2px solid gray"})
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Math Operation</h2>
+    <form id="calculatorForm">
+        <label for="num1">Enter 1st Number:</label>
+        <input type="text" name="num1" id="num1">
+
+        <br><br>
+
+        <label for="num2">Enter 2nd Number:</label>
+        <input type="text" name="num2" id="num2">
+        <br><br>
+        <label for="ans">Answer is:</label>
+        <input type="number" name="ans" id="ans" readonly>
+        <br><br>
+
+        <button type="button" onclick="calculate('+')">+</button>
+        <button type="button" onclick="calculate('-')">-</button>
+        <button type="button" onclick="calculate('*')">*</button>
+        <button type="button" onclick="calculate('/')">/</button>
+        <button type="button" onclick="calculate('%')">%</button>
+
+
+        
+    </form>
+    <script>
+        function calculate(operator) {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var result = 0;
+
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 !== 0) 
+                    {
+                        result = num1 / num2;
+                    } 
+                    else 
+                    {
+                        alert("Error: Division by zero!");
+                    }
+                    break;
+                case '%':
+                    result = num1 % num2;
+                    break;
+                default:
+                    alert("Invalid operator!");
+            }
+
+            document.getElementById('ans').value = result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .result{
+            border: 2px solid black;
+            margin: auto;
+            padding: 10px;
+            width: 30%;
+            height: auto;
+        }
+        .result h1{
+            text-align: center;
+
+        }
+        .result h6{
+            text-align: center;
+            padding-bottom: 20px;
+            font-size: 20px;
+        }
+        .drow{
+            padding-bottom: 20px;
+        }
+        button
+        {
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        .hide{
+            border: none;
+        }
+        button:hover{
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="result">
+            <h1>Marksheet for information technology</h1>
+            <h6>Enter Marks</h6>
+
+            <div class="drow">
+                1.C Language <input type="number" name="c" id="text1" size="30">
+            </div>
+
+            <div class="drow">
+                2.C++ Language <input type="number" name="sharp" id="text2"
+                    size="30">
+            </div>
+
+            <div class="drow">
+                3.Database <input type="number" name="database" id="text3"
+                    size="30">
+            </div>
+
+            <div class="drow">
+                4.HTML <input type="number" name="basic" id="text4" size="30">
+            </div>
+
+            <div class="drow">
+                5.CSS <input type="number" name="styling" id="text5" size="30">
+            </div>
+
+            <div class="drow">
+                6.php
+                <input type="number" name="heading" id="text6" size="30">
+            </div>
+
+            <div class="drow">
+                7.core java
+                <input type="number" name="js" id="text7" size="30">
+            </div>
+            <p>Total is: <span id="total"></span></p><br>
+            <p>Percentage <is:spa id="per"></is:spa></p>
+            <button id="result" onclick="show()">Result</button>
+
+            <script>
+
+            let text1 = document.getElementById("text1");
+            let text2 = document.getElementById("text2");
+            let text3 = document.getElementById("text3");
+            let text4 = document.getElementById("text4");
+            let text5 = document.getElementById("text5");
+            let text6 = document.getElementById("text6");
+            let text7 = document.getElementById("text7");
+            let total = document.getElementById("total");
+            let per=document.getElementById("per");
+
+            function show()
+            {
+            
+                
+
+                
+                let inputs = [text1, text2, text3, text4, text5, text6, text7];
+                let sum = 0;
+
+                for (let i = 0; i < inputs.length; i++) {
+                    let value = Number(inputs[i].value);
+                    if (value > 50) {
+                        alert("please enter the number at the range of 1 to 50...");
+                        return;
+                    }
+                    sum += value;
+                }
+
+                
+
+                let ans = Number(text1.value) + Number(text2.value) + Number(text3.value) + Number(text4.value) + Number(text5.value) + Number(text6.value) + Number(text7.value);
+                
+                total.innerText =ans;
+
+                let percentage=ans*2/7;
+
+                per.innerText=percentage;
+            } 
+        </script>
+
+        </div>
+    </body>
+</html>
